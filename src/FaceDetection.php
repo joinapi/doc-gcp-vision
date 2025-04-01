@@ -26,9 +26,9 @@ class FaceDetection
     public function detectFaces(string $imagePath): array
     {
         // Verifica se o arquivo existe ou é uma URL
-        //if (!filter_var($imagePath, FILTER_VALIDATE_URL) && !file_exists($imagePath)) {
-        //    throw new \InvalidArgumentException("O caminho para a imagem é inválido.");
-       // }
+        if (!filter_var($imagePath, FILTER_VALIDATE_URL) && !file_exists($imagePath)) {
+            throw new \InvalidArgumentException("O caminho para a imagem é inválido.");
+        }
 
         // Carrega o conteúdo da imagem
         $imageContent = file_get_contents($imagePath);
