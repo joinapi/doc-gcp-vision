@@ -1,0 +1,46 @@
+{
+    "name": "joinapi/doc-gcp-vision",
+    "description": "- Biblioteca para detecção facial usando o Google Vision",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Joinapi\\DocGcpVision\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "joinapi",
+            "email": "devops@joinapi.io"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.2",
+        "google/cloud-vision": "^v1.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0.1"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "prefer-stable": true,
+    "scripts": {
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "phpunit"
+        ]
+    }
+
+}
