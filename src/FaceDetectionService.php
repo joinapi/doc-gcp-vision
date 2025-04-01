@@ -2,12 +2,13 @@
 
 namespace Joinapi\DocGcpVision;
 
+use Google\ApiCore\ApiException;
 use Google\ApiCore\ValidationException;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 use Google\Cloud\Vision\V1\FaceAnnotation;
 
-class FaceDetection
+class FaceDetectionService
 {
     protected  $client;
 
@@ -23,6 +24,11 @@ class FaceDetection
         ]);
     }
 
+    /**
+     * @param string $imagePath
+     * @return array
+     * @throws ApiException
+     */
     public function detectFaces(string $imagePath): array
     {
         // Verifica se o arquivo existe ou é uma URL

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Unit;
+namespace Tests\Unit;
 
 
 use Google\ApiCore\ValidationException;
-use Joinapi\DocGcpVision\FaceDetection;
+use Joinapi\DocGcpVision\FaceDetectionService;
 use PHPUnit\Framework\TestCase;
 
 
@@ -18,7 +18,7 @@ class FaceDetectionTest extends TestCase
     public function testDetectFaces()
     {
 
-        $detection = new FaceDetection([
+        $detection = new FaceDetectionService([
             'keyFile' => 'credentials.json',
         ]);
 
