@@ -10,7 +10,7 @@ class FaceDetectionServiceProvider  extends ServiceProvider implements Deferrabl
     public function register()
     {
         $this->app->singleton( 'facedetectionservice', function ($app) {
-            return new FaceDetectionService($app);
+            return new FaceDetectionService(['keyFile' => getenv('GOOGLE_APPLICATION_CREDENTIALS')] );
         });
     }
 }
